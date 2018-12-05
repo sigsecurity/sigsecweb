@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>ACM SIG-Security | Login</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <h1>Login</h1>
+    <form>
+        Email:<br>
+        <input type="text" name="email" id="email"><br>
+        Password:<br>
+        <input type="password" name="pass" id="pass"><br>
+        <input type="submit" value="Submit">
+    </form>
+  </body>
+
+  <script>
+    $("form").submit(function(e) {
+      var email = $("#email").val();
+      var pass = $("#pass").val();
+
+      $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: "/login",
+        dataType: "json",
+        data: JSON.stringify({email: email, password: pass}),
+        success: function(data) {
+          console.log(data);
+        }
+      });
+
+      return false;
+    });
+  </script>
+</html>
