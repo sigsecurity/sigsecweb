@@ -27,7 +27,9 @@
         dataType: "json",
         data: JSON.stringify({email: email, password: pass}),
         success: function(data) {
-          console.log(data);
+          if(data.success) {
+              window.location.href = "/"
+          }
         }
       });
 
