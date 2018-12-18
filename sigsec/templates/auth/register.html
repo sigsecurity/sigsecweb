@@ -1,21 +1,17 @@
-<html>
-  <head>
-    <title>ACM SIG-Security | Register</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  </head>
+{% extends "base.html" %}
 
-  <body>
-    <h1>Register</h1>
-    <form>
-        Email:<br>
-        <input type="text" name="email" id="email"><br>
-        Password:<br>
-        <input type="password" name="pass" id="pass"><br>
-        Retype Password:<br>
-        <input type="password" name="repass" id="repass"><br>
-        <input type="submit" value="Submit">
-    </form>
-  </body>
+{% block body %}
+  <h1>Register</h1>
+  <form>
+      Email:<br>
+      <input type="text" name="email" id="email"><br>
+      Password:<br>
+      <input type="password" name="pass" id="pass"><br>
+      Retype Password:<br>
+      <input type="password" name="repass" id="repass"><br>
+      <input type="submit" value="Submit">
+  </form>
+
 
   <script>
     $("form").submit(function(e) {
@@ -43,4 +39,4 @@
       return false;
     });
   </script>
-</html>
+{% endblock %}
