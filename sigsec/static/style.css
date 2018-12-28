@@ -1,0 +1,7 @@
+.navbar-vert-sep {
+  border-right: 1px solid #888;
+}
+
+a:focus {
+  outline: none;
+}
