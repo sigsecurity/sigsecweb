@@ -9,3 +9,7 @@ html {
 .card {
   height: 100%;
 }
+
+.media-content {
+  overflow: hidden;
+}
