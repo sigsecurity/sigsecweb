@@ -15,7 +15,7 @@ bcrypt = Bcrypt(current_app)
 
 auth = Blueprint('auth', __name__)
 
-@auth.route("/register", methods=['GET', 'POST'])
+@auth.route("/join", methods=['GET', 'POST'])
 def register():
   if request.method == "GET":
     return render_template("auth/register.html", title="Register")

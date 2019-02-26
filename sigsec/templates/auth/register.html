@@ -1,42 +1,47 @@
 {% extends "base.html" %}
 
 {% block body %}
-  <h1>Register</h1>
-  <form>
-      Email:<br>
-      <input type="text" name="email" id="email"><br>
-      Password:<br>
-      <input type="password" name="pass" id="pass"><br>
-      Retype Password:<br>
-      <input type="password" name="repass" id="repass"><br>
-      <input type="submit" value="Submit">
-  </form>
-
-
-  <script>
-    $("form").submit(function(e) {
-      var email = $("#email").val();
-      var pass = $("#pass").val();
-      var repass = $("#repass").val();
-
-      if(pass != repass) {
-        return false;
-      }
-
-      $.ajax({
-        type: "POST",
-        contentType: "application/json; charset=utf-8",
-        url: "/register",
-        dataType: "json",
-        data: JSON.stringify({email: email, password: pass}),
-        success: function(data) {
-          if(data.success) {
-            window.location.href = "/";
-          }
-        }
-      });
-
-      return false;
-    });
-  </script>
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <div class="card">
+        <div class="card-content">
+          <h1 class="title">Join SIG-Security</h1>
+          <form class="form-horizontal">
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control has-icons-left">
+                <input class="input" type="text">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-at"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Username</label>
+              <div class="control has-icons-left">
+                <input class="input" type="text">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control has-icons-left">
+                <input class="input" type="password">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-key"></i>
+                </span>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button class="button is-link is-fullwidth is-medium">Join</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
