@@ -4,6 +4,7 @@ a:focus {
 html {
   background-image: url("/static/grey.png");
   background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .card {
