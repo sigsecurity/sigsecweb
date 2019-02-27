@@ -1,7 +1,15 @@
-.navbar-vert-sep {
-  border-right: 1px solid #888;
-}
-
 a:focus {
   outline: none;
+}
+html {
+  background-image: url("/static/grey.png");
+  background-repeat: repeat;
+}
+
+.card {
+  height: 100%;
+}
+
+.media-content {
+  overflow: hidden;
 }
