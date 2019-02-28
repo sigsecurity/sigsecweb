@@ -41,14 +41,20 @@
 
       <div class="navbar-end">
         <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary" href=/join>
-              <strong>Join SIG-Security</strong>
-            </a>
-            <a class="button is-light" href="/login">
-              Log in
-            </a>
-          </div>
+            <div class="buttons">
+              {% if not authenticated %}
+              <a class="button is-primary" href=/join>
+                <strong>Join SIG-Security</strong>
+              </a>
+              <a class="button is-light" href="/login">
+                Log in
+              </a>
+              {% else %}
+              <a class="button is-light" href="/logout">
+                Log out
+              </a>
+              {% endif %}
+            </div>   
         </div>
       </div>
     </div>

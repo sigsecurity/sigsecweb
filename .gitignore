@@ -1,3 +1,4 @@
 .secret_key
 *.db
 .vscode/*
+.google_oauth
