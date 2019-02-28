@@ -12,7 +12,7 @@ SCOPE = ['https://www.googleapis.com/auth/userinfo.email','https://www.googleapi
 @auth.route('/login')
 def external_login():
   google = OAuth2Session(CLIENT_ID, redirect_uri=url_for('auth.callback', _external=True), scope=SCOPE)
-  authorization_url, state = google.authorization_url('https://accounts.google.com/o/oauth2/v2/auth')
+  authorization_url, state = google.authorization_url('https://accounts.google.com/o/oauth2/v2/auth', hd='mst.edu')
   
   session['oauth_state'] = state
   return redirect(authorization_url)
