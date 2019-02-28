@@ -10,7 +10,10 @@ class User(db.Model):
 
   id = db.Column(db.Integer, primary_key=True)
   email = db.Column(db.String(120), unique=True, nullable=False)
-  password = db.Column(db.String(60), nullable=False)
+  given_name = db.Column(db.String(40))
+  family_name = db.Column(db.String(40))
+  name = db.Column(db.String(80))
+  picture_url = db.Column(db.String(150))
 
 
   
