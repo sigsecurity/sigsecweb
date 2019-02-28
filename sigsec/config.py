@@ -28,7 +28,6 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_TYPE = 'redis'
     OAUTHLIB_INSECURE_TRANSPORT=True
-    SERVER_NAME="localhost:4523"
 
     with open('.google_oauth') as f:
         GOOGLE_OAUTH_CLIENT_ID = f.readline().strip()
