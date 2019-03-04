@@ -1,4 +1,5 @@
 from flask import Flask
+from werkzeug.contrib.fixers import ProxyFix
 from sqlalchemy_utils import database_exists
 from sqlalchemy.engine.url import make_url
 import os
@@ -6,6 +7,7 @@ import os
 
 def create_app(config='sigsec.config.Config'):
     app = Flask(__name__)
+    app.wsgi_app = ProxyFix(app.wsgi_app)
     app.config.from_object(config)
 
     with app.app_context():

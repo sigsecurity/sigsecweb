@@ -12,6 +12,8 @@ flask-sqlalchemy = "*"
 sqlalchemy-utils = "*"
 flask-migrate = "*"
 flask-bcrypt = "*"
+requests = "*"
+requests-oauthlib = "*"
 
 [requires]
 python_version = "3.7"
