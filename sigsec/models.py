@@ -15,6 +15,7 @@ class User(UserMixin, db.Model):
   name = db.Column(db.String(80))
   picture_url = db.Column(db.String(200))
   is_public = db.Column(db.Boolean, default=True)
+  is_admin = db.Column(db.Boolean, default=False)
 
   def serialize(self):
     if self.is_public:
