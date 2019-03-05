@@ -11,12 +11,13 @@ def create_app(config='sigsec.config.Config'):
     app.config.from_object(config)
 
     with app.app_context():
-        from sigsec.database import db
+        from sigsec.models import db
+        db.create_all()
+        
+        from sigsec.g_auth import g_auth
+        app.register_blueprint(g_auth)
 
-        from sigsec.views import views
-        app.register_blueprint(views)
-
-        from sigsec.auth import auth
-        app.register_blueprint(auth)
+        from sigsec.api import api
+        app.register_blueprint(api)
 
     return app
