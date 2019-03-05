@@ -27,7 +27,6 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///{}/database.db'.format(os.path.dirname(os.path.abspath(__file__)))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_TYPE = 'redis'
-    OAUTHLIB_INSECURE_TRANSPORT=True
 
     with open('.google_oauth') as f:
         GOOGLE_OAUTH_CLIENT_ID = f.readline().strip()

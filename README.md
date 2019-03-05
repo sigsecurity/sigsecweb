@@ -7,3 +7,10 @@
 3. Clone the repository `git clone git@github.com:trainrex42/sigsecweb.git`
 4. Run `pipenv install` to setup your virtual environment
 5. Test that the webserver works by running `pipenv run python serve.py` and visiting http://localhost:4523
+
+## Authorization to API
+
+1. Visit `/google/auth` to recieve your authorization URL `auth_url`
+2. Navigate to `auth_url` and select your account
+3. If `success` = `true` you are now authenticated
+
