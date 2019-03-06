@@ -10,29 +10,23 @@ not_authenticated = success(False, reason='You are not allowed to access this re
 
 @api.route('/users')
 def users_list():
-  if current_user.is_authenticated:
-    users = [user.serialize() for user in User.query.all()]
-    return success(True, data=dict(users=users))
-  else:
-    return not_authenticated
+  users = [user.serialize() for user in User.query.all()]
+  return success(True, data=dict(users=users))
 
 @api.route('/users/<int:user_id>')
 def get_user(user_id):
-  if current_user.is_authenticated:
-    user = User.query.get(user_id)
-    if user is None:
-      return resource_not_found
-    else:
-      return success(True, data=dict(user=user.serialize()))
+  user = User.query.get(user_id)
+  if user is None:
+    return resource_not_found
   else:
-    return not_authenticated
+    return success(True, data=dict(user=user.serialize()))
 
 @api.route('/users/current-user')
 def get_current_user():
   if current_user.is_authenticated:
     return success(True, data=dict(user=current_user.serialize()))
   else:
-    return not_authenticated
+    return success(True, data=dict(user=None))
 
 @api.route('/users/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
